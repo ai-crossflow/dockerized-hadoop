@@ -14,9 +14,9 @@ ENV HADOOP_VERSION=3.3.1 \
 RUN apt-get update && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/* \
     && \
     if [ "$(uname -m)" = "aarch64" ]; then \
-        curl -SL https://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION-aarch64.tar.gz | tar xvz -C /opt ; \
+        curl -SL https://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION-aarch64.tar.gz | tar xz -C /opt ; \
     else \
-        curl -SL https://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz | tar xvz -C /opt ; \
+        curl -SL https://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz | tar xz -C /opt ; \
     fi \
     && ln -s /opt/hadoop-$HADOOP_VERSION /opt/hadoop \
     && rm -r /opt/hadoop/share/doc \
