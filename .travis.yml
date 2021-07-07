@@ -23,4 +23,4 @@ script:
 #  - if [ "${TRAVIS_CPU_ARCH}" = "amd64" ]; then docker buildx build --platform linux/amd64 -t ${IMAGE_TAG} -f dockerfile . ; else docker buildx build --platform linux/arm64 -t ${IMAGE_TAG} -f dockerfile . ; fi
 #  - docker buildx build --platform linux/arm64 -t ${IMAGE_TAG} -f dockerfile . 
   - docker build -t ${IMAGE_TAG} -f dockerfile . 
-#  - docker push ${IMAGE_TAG}
+  - docker push ${IMAGE_TAG}
